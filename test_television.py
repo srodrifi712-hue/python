@@ -33,7 +33,6 @@ def test_channel_up():
     tv.channel_up()
     assert tv._Television__channel == 0
 
-
 def test_channel_down():
     tv = Television()
     tv.power()
@@ -46,7 +45,6 @@ def test_channel_down():
     assert tv._Television__channel == 0
     tv.channel_down()
     assert tv._Television__channel == 3
-
 
 def test_volume_up():
     tv = Television()
