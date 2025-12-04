@@ -19,6 +19,11 @@ def test_mute():
     assert tv._Television__muted == True
     tv.mute()
     assert tv._Television__muted == False
+    tv.power()
+    tv.mute()
+    assert tv._Television__muted == False
+    tv.mute()
+    assert tv._Television__muted == False
 
 def test_channel_up():
     tv = Television()
@@ -31,6 +36,8 @@ def test_channel_up():
     tv.channel_up()
     assert tv._Television__channel == 3
     tv.channel_up()
+    assert tv._Television__channel == 0
+    tv.power()
     assert tv._Television__channel == 0
 
 def test_channel_down():
@@ -45,6 +52,8 @@ def test_channel_down():
     assert tv._Television__channel == 0
     tv.channel_down()
     assert tv._Television__channel == 3
+    tv.power()
+    assert tv._Television__channel == 3
 
 def test_volume_up():
     tv = Television()
@@ -58,6 +67,8 @@ def test_volume_up():
     assert tv._Television__volume == 2
     tv.volume_up()
     assert tv._Television__volume == 2
+    tv.power()
+    assert tv._Television__volume == 2
 
 def test_volume_down():
     tv = Television()
@@ -70,5 +81,7 @@ def test_volume_down():
     tv.volume_down()
     assert tv._Television__volume == 0
     tv.volume_down()
+    assert tv._Television__volume == 0
+    tv.power()
     assert tv._Television__volume == 0
 
