@@ -6,7 +6,7 @@ class Television:
     MAX_CHANNEL: int = 3
 
     def __init__(self) -> None:
-        """Starts it with default the settings"""
+        """Starts it with the default settings"""
         self.__status: bool = False
         self.__muted: bool = False
         self.__volume: int = Television.MIN_VOLUME
