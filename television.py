@@ -60,4 +60,4 @@ class Television:
     def __str__(self) -> str:
         """If muted, then volume is 0. Returns the info of the television"""
         display_volume: int = 0 if self.__muted else self.__volume
-        return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {display_volume}"
+        return f"Power - {self.__status}, Channel - {self.__channel}, Volume - {display_volume}"
